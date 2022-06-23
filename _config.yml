@@ -11,9 +11,9 @@ title                    : "Jing Shu's research group"
 title_separator          : "-"
 name                     : &name "Jing Shu"
 description              : &description "personal description"
-url                      :  https://jingshugroup.github.io #https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      :  https://yvonne2022.github.io #https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/phys_en" # the subpath of your site, e.g. "/blog"
-repository               : " https://jingshugroup.github.io"
+repository               : " https://yvonne2022.github.io"
 favicon                  : 'assets/images/favicon.ico'
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
