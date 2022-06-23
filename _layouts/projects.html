@@ -1,0 +1,111 @@
+{% include base_path %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Jing Shu's Research Group</title>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Responsive Portfolio Template">
+<meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+<!-- <link rel="shortcut icon" href="../favicon.ico"> -->
+<link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Google Font -->
+<!-----
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    --->
+<!-- FontAwesome JS -->
+<script defer src="../assets/fontawesome/js/all.js"></script>
+<!-- Plugins CSS -->
+<link rel="stylesheet" href="../assets/plugins/flickity/flickity.min.css">
+<!-- Theme CSS -->
+<link id="theme-style" rel="stylesheet" href="../assets/css/theme-8.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+paperlist.number {
+  list-style-position:inside;
+  list-style-type:decimal;
+  list-style-image:inherit;
+}
+  </style>
+</head>
+<body onLoad="myfunction()">
+
+{% include header-research.html %}
+
+
+<section class="skills-section section py-3">
+  <div class="container">
+
+ <div class="skills-blocks mx-auto pt-3">
+      <div class="row">
+        <div class="skills-block col-12 col-lg-8 mb-5 mb-3 mb-lg-0 bg-white shadow-sm">
+          <div class="skills-block-inner py-4 px-5 position-relative">
+            <h2 class="skills-cat text-left mb-3 mt-3"><span class="section-title font-weight-bold text-center mb-3">Research Interests</span></h2>
+
+
+				
+				{% for post in site.research %}
+
+                {% include archive-single-research-intro.html %}
+                {% endfor %}
+    	 			  
+			  
+          </div>
+          <!--//skills-block-inner-->
+        </div>
+        <!--//skills-block-->
+
+        <div class="skills-block col-12 col-lg-4 mb-5 mb-3 mb-lg-0">
+          <div class="skills-block-inner bg-white shadow-sm py-4 px-5 position-relative">
+            <h4 class="skills-cat text-left mb-3 mt-3"><span class="section-title font-weight-bold text-center mb-3">Publication Lists</span></h4>
+            <u1>
+              <li class="mb-5">Web of Inspirehep: <a style="color:#0000FF" class="text-link word-wrap:break-word " href="https://inspirehep.net/authors/1019902"><strong> authors/1019902</strong></a></li>
+            </u1>
+            <h5 class="skills-cat text-left mb-3 my-5"><span class="section-title font-weight-bold text-center mb-3">Selected Publications</span></h5>
+           
+			
+             {% for post in site.publications %}
+                 {% include archive-single-publications.html %}
+                 {% endfor %}
+			  
+				 
+			 <paperlist align="justify" class="number mb-2 mt-2">
+            </paperlist>
+          </div>
+          <!--//skills-block-inner-->
+        </div>
+        <!--//skills-block-->
+      </div>
+      <!--//row-->
+    </div>
+  </div>
+  <!--//container-->
+</section>
+<!--//skills-section-->
+<!--cccccccccccccccccccccccccccccc-->
+
+{% include footer.html %} 
+
+
+
+<!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->
+<!-- Javascript -->
+<script type="text/javascript" src="../assets/plugins/popper.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/vanilla-back-to-top.min.js"></script>
+<!-- Page Specific JS -->
+<script type="text/javascript" src="../assets/plugins/flickity/flickity.pkgd.min.js"></script>
+<!-- Custom JS -->
+<script type="text/javascript" src="../assets/js/main.js"></script>
+<script type="text/javascript" src="../assets/js/flickity-custom.js"></script>
+<!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+<script type="text/javascript" src="../assets/js/demo/style-switcher.js"></script>
+<!--  *****The roll-up part is beginning *********** -->
+<!--  **************** -->
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+{% include base_path %}
+
+
+<section class="skills-section section py-2">
+  <div class="container">
+    <div class="skills-blocks mx-auto pt-3">
+      <div class="row">
+        <div class="skills-block bg-white shadow-sm col-12 col-lg-8 mb-5 mb-3 mb-lg-0">
+          <!--ccccccccccc  the left column part ccccccccccccccccccc-->
+          <!--ccccccccccc  the first row for the left column ccccccccc-->
+          <table class="mt-4 table table-borderless table-sm">
+            <thead>
+              <tr>
+                <th><h4 class="section-title font-weight-bold text-left mb-2">Research Highlights </h4></th>
+                <th><p align="right" class="me-2" style= style="vertical-align:baseline"> <a href="projects.html" class="link_m">more</a> </p></th>
+              </tr>
+            </thead>
+          </table>
+          <div class="mb-3 mt-3" style="border-top:solid #000000" > </div>
+          <div class="project-cards row mb-5 mt-5">
+		  
+		  
+		  
+		        {% for post in site.research_reports reversed%}
+
+                {% include archive-single-research_reports.html%}
+				
+                {% endfor %}  
+				
+
+		  	
+			
+          </div>
+          <!--//row-->
+          <!--ccccccccccc ending  the second row for the left column ccccccccc-->
+          <!--ccccccccccc ending the left column part ccccccccccccccccccc-->
+        </div>
+        <!--//skills-block-->
+		
+
+        <div class="skills-block col-12 col-lg-4 link_n">
+				
+          <div class="skills-block-inner bg-white shadow-sm py-3 px-5 position-relative">
+            <h4 class="skills-cat text-left mb-3 mt-3"><span class="section-title font-weight-bold text-center mb-5" >Breaking News</span></h4>
+            <!--   <ul class="skills-list list-unstyled text-secondary">-->
+            <div class="mb-4 mt-4" style="border-top:solid #000000" > </div>
+			
+
+		
+            <div id="rollCon" class="mb-5"> 
+              <div id="rollSubject">
+			  
+			    {% for post in site.news %}
+                {% include archive-single-news.html %}
+
+                {% endfor %}
+				
+				
+     <!--           <uu1 class="bbb">			
+                </uu1>  -->
+  
+				
+                <!-- <li class="mb-4">
+	  <!--  <div align="justify"><i class="fas fa-check-square  text-primary"></i>Our joint work with Xiamen University entitled "Surface Coordination Layer  <!--Passivates Oxidation of Copper" was published</div>
+	 <!-- </li>-->
+              </div>
+              <div id="rollCopy"></div>
+            </div>
+			
+	
+			
+            <!--    </ul>-->
+          </div>
+          <!--//skills-block-inner-->
+        </div>
+        <!--//skills-block-->
+		
+      </div>
+      <!--//row-->
+    </div>
+  </div>
+  <!--//container-->
+</section>
+<!--//skills-section-->
+
+<!--  **************** -->
+
+<script src="lib/jquery-latest.js"></script>
+<script>
+
+
+    var scrollTop = window.pageYOffset|| document.documentElement.scrollTop || document.body.scrollTop;
+    var rollCon = document.getElementById('rollCon');
+    var rollSubject = document.getElementById('rollSubject');
+    var rollCopy = document.getElementById('rollCopy');
+    rollCopy.innerHTML = rollSubject.innerHTML;
+    if(($('#rollSubject').height()>0)&&($('#rollSubject').height()<$('#rollCon').height())){
+        $('#rollCon').css('height',$('#rollSubject').height());
+        setInterval(Marquee, 50);
+    }else if(($('#rollSubject').height()>0)&&($('#rollSubject').height()>=$('#rollCon').height())){
+        setInterval(Marquee, 50);
+    }
+    function Marquee() {
+        if ((rollCopy.offsetTop-rollSubject.offsetTop)<rollCon.scrollTop)
+            rollCon.scrollTop =0;
+        else {
+            rollCon.scrollTop++;
+        }
+    }
+	
+    var speed=50;
+    var myMar=setInterval(Marquee,speed); 
+    window.onmouseover=function(){clearInterval(myMar);}
+    window.onmouseout=function(){myMar=setInterval(Marquee,speed);}	
+	
+
+</script>
+<script>
+function myfunction(){
+ initdiv('.row-1-col-1',".row-1-col-2");
+ window.alert("sometext")；
+}
+function initdiv(){
+ 	var divHeightArr = [];
+		for (var i=0; i<arguments.length; i++)
+ 		{
+ 			divHeightArr.push($(arguments[i]).height())
+ 		}
+ 	var sameheight = Math.max.apply(null, divHeightArr);
+  	for (var i=0; i<arguments.length; i++)
+ 	{
+ 		$(arguments[i]).height(sameheight);
+	 }
+}
+</script>
+
+<style>
+@keyframes rowup {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, -307px, 0);
+        transform: translate3d(0, -307px, 0);
+    }
+}
+.list{
+    width: 300px;
+    border: 1px solid #999;
+    margin: 20px auto;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.list .rowup{
+    -webkit-animation: 10s rowup linear infinite normal;
+    animation: 10s rowup linear infinite normal;
+    position: relative;
+}
+</style>
+<!--  **************** -->
+<!--  *****The roll-up part is ending *********** -->

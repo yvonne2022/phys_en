@@ -1,0 +1,83 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+
+            <!--
+             <div class="col-12 col-lg-6">
+              <div class="card rounded-0 border-0 shadow-sm mb-5 mb-lg-0">
+                <div class="card-img-container position-relative">
+				
+				{% if post.image %}	
+					<a href="{{post.paper_url}}">
+					<img class="card-img-top rounded-0" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">				
+	                </a>
+                    {% endif %}
+				
+						
+                  <h5 class="card-title font-weight-bold">Abstract-1</h5>
+				  
+                  <p align="justify" class="card-text text-justify">{{post.content}}</p>
+                  </a> </div>
+                <div class="card-body pb-0">
+                  <h4 class="card-title text-left mb-0"><a class="text-link" href="post.paper_url">{{post.title}}<span class="STYLE11">({{post.issue_num}})</span></a></h4>
+                </div>
+                <div class="card-footer border-0 text-center bg-white pb-4">
+                  <ul class="list-inline mb-0 mx-auto">
+                    <li class="list-inline-item"></li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>  -->
+   
+   
+			
+            <div class="col-12 col-lg-6">
+              <div class="card rounded-0 border-0 shadow-sm mb-5 mb-lg-0">
+                <div class="card-img-container position-relative"> 
+				{% if post.image %}	
+				
+				<img class="card-img-top rounded-0" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
+				{% endif %}
+				
+				
+				<a class="card-img-overlay overlay-content text-start p-lg-4"  href="{{post.paper_url}}">
+			
+				
+                  <h5 class="card-title font-weight-bold">Abstract</h5>
+				  
+				  
+				  
+                  <p align="justify" class="card-text text-justify ">{{post.content}}</p>
+                  </a> 
+				  </div>
+				  
+                <div class="card-body pb-0">
+                 <h4 class="card-title text-left mb-0"><a class="text-link" href="{{post.paper_url}}">{{post.title}}<span class="STYLE11">({{post.issue_num}})</span></a></h4> 
+				  
+
+                </div>
+                <div class="card-footer border-0 text-center bg-white pb-4">
+                  <ul class="list-inline mb-0 mx-auto">
+                    <li class="list-inline-item"></li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>  <!--//col-->
+			
+			
+			
+			
+			

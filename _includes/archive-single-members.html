@@ -1,0 +1,40 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+         
+333333333
+      <div class="col-12 col-md-6 col-lg-6 mb-1">
+        <!--div class="card rounded-0 border-0 bg-white shadow-sm eq-height"-->
+        <div class="w-100 featured-card d-md-table card rounded-0 border-0 mb-1 ">
+		{{post.pers_name}}
+		 
+		 
+		 
+
+         
+        </div>
+        <!--//card featured-card-->
+      </div>
+      <!--//col-->
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+
+
+			
+	
+        <div class="col-12 col-md-6 col-lg-6 mb-1">
+        <!--div class="card rounded-0 border-0 bg-white shadow-sm eq-height"-->
+        <div class="w-100 featured-card d-md-table card rounded-0 border-0 mb-1 ">
+		
+		
+		{% if post.image %}	
+		
+		<img class="profile-image mt-2 pt-4 mb-lg-0 ms-md-2 rounded  mx-auto" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
+	  
+        {% endif %}
+		
+				 
+		 
+          <div class="featured-card-body card-body d-md-table-cell  pb-1" style= "vertical-align:top; left:auto">
+		  
+            <h3 class="card-title mb-2 mt-2">
+              <p>&nbsp;</p>
+            </h3>
+             <h3 class="card-title mb-2 mt-2"><strong>{{post.pers_name}}</strong></h3>
+            <div class="card-text">
+             
+			 <div class="excerpt mb-2"> <font class="font-weight-bold"> Enrollment year: </font>  {{post.enro_year}}</div> 
+			 <div class="excerpt mb-2"> <font class="font-weight-bold"> BS: </font>  {{post.grad_bs}}</div> 
+			 <div class="excerpt mb-2">  <font class="font-weight-bold">PhD:</font>  {{post.grad_phd}}</div> 
+			 
+			 
+		     <div class="excerpt mb-2"> <font class="font-weight-bold">Publications:</font><a class="text-link" href=" {{post.publ_list}}"> {{post.publ_list}}</a>
+			 
+				
+			 </div> 
+			   
+			   <div class="excerpt mb-2"><font class="font-weight-bold">Contact:</font> {{post.email_addr}} </div> 
+			   
+		
+			   
+			   <div class="excerpt mb-2"><font class="font-weight-bold">Research interests:</font> {{post.content}}</div>
+               
+            </div> <!--//card text-->
+			
+			
+          </div> <!--//card featured-card-body-->
+         
+        </div>
+        <!--//card featured-card-->
+      </div>
+      <!--//col-->
+
+
+ 
